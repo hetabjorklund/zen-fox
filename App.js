@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { Text, View, Button } from 'react-native';
+import { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getDatabase, push, ref, onValue, remove } from 'firebase/database';
@@ -7,10 +8,16 @@ import { getDatabase, push, ref, onValue, remove } from 'firebase/database';
 import Quotes from './components/quotes';
 import Pictures from './components/pictures';
 import database from './database';
+import styles from './styles';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+
+  // PICTURES
+
+  const [picture, setPicture] = useState(null);
+  //const [picturelist, setPicturelist] = useState([]);
 
   // database for pictures
   ref(database, 'pictures/')
@@ -22,13 +29,13 @@ export default function App() {
       { 'picture': picture }
     );
   };
-  
-  // delete a picture (pictures-komponenttiin?)
-  const deletePicture = (key) => {
-    remove(ref(database, 'pictures/' + key)); 
-  };
 
   // fetch a new picture
+
+  // QUOTES
+
+  const [quote, setQuote] = useState("");
+  //const [quotelist, setQuotelist] = useState([]);
 
   // database for quotes
   ref(database, 'quotes/')
@@ -39,11 +46,6 @@ export default function App() {
       ref(database, 'quotes/'),
       { 'quote': quote }
     );
-  };
-
-  // delete a quote (quotes-komponenttiin?)
-  const deleteQuote = (key) => {
-    remove(ref(database, 'quotes/' + key)); 
   };
 
   // fetch a new quote
@@ -68,14 +70,3 @@ export default function App() {
 
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 50,
-    flex: 2,    
-    flexDirection: "column",
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});
