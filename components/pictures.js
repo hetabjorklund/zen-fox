@@ -1,5 +1,7 @@
 import database from './database';
 import styles from '../styles';
+import { useState } from 'react'; 
+import { Text, View, Button, FlatList } from 'react-native';
 
 export default function Pictures() {
 

@@ -1,5 +1,7 @@
 import styles from "../styles";
 import database from "../database";
+import { useState } from 'react'; 
+import { Text, View, Button, FlatList } from 'react-native';
 
 export default function Quotes() {
 
