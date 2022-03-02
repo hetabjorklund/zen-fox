@@ -31,6 +31,18 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'space-evenly'   
+    },
+    image: { 
+      width: '50%',
+      height: 100,
+      borderRadius: 5
+    },
+    operators: {
+      flexDirection: "row",
+      alignItems: 'center',
+      marginTop: 10,
+      marginBottom: 10,
+      justifyContent: 'space-between'
     }
 });
 
