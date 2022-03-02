@@ -35,7 +35,7 @@ export default function Pictures() {
                 keyExtractor={item => item.key}
                 renderItem={({ item }) =>
                     <View style={styles.listcontainer}>
-                        <Text>{item}</Text>
+                        <Image style={styles.image} source={{item}}></Image>
                         <Text style={styles.itemtext} onPress={() => deletePicture(item.key)}>delete</Text>
                     </View>
                 }        
