@@ -1,0 +1,23 @@
+*/node_modules
+node_modules/
+.expo/
+*/.expo/
+dist/
+*/dist/
+npm-debug.*
+*/npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+*/web-build/
+/.expo-shared/README.md
+*/.expo-shared/README.md
+Apikey.js
+FirebaseConfig.js
+
+# macOS
+.DS_Store
