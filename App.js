@@ -17,6 +17,7 @@ export default function App() {
   // PICTURES
 
   const [picture, setPicture] = useState(null);
+  const [pictureReady, setPictureready] = useState(false);
   //const [picturelist, setPicturelist] = useState([]);
 
   // database for pictures
@@ -31,10 +32,24 @@ export default function App() {
   };
 
   // fetch a new picture
+  const fetchPicture = async () => {
+    try
+    {
+      const response = await fetch(`https://randomfox.ca/floof/`);
+      const data = await response.json();
+      const image = data.image;
+      setPicture(image);
+      setPictureready(true);
+    }
+    catch {
+      console.error();
+    }
+   };
 
   // QUOTES
 
   const [quote, setQuote] = useState("");
+  const [quoteReady, setQuoteready] = useState(false);
   //const [quotelist, setQuotelist] = useState([]);
 
   // database for quotes
@@ -49,15 +64,43 @@ export default function App() {
   };
 
   // fetch a new quote
+  const fetchQuote = async () => {
+    try
+    {
+      const response = await fetch(``); // osoite puuttuu!
+      const data = await response.json();
+      const quoteformatted = data.h;
+      setQuote(quoteformatted);
+      setQuoteready(true);
+    }
+    catch {
+      console.error();
+    }
+   };
   
   return (
 
     <View>
 
-      <Button title='Get a new fox picture'></Button>
+      <StatusBar style="auto" />
 
-      <Button title='Get a new Zen quote'></Button>
+      {pictureReady ?
+        <View>
+          <Image width="100" height="100">{picture}</Image>
+          <Button title='Save picture' onPress={savePicture}></Button>
+        </View>
+        : null}
+      
+      <Button title='Get a new fox picture' onPress={fetchPicture}></Button>
 
+      {quoteReady ? 
+        <View>
+          <Text>{quote}</Text>
+          <Button title='Save quote' onPress={saveQuote}></Button>
+        </View>
+        : null}
+      
+      <Button title='Get a new Zen quote' onPress={fetchQuote}></Button>
 
       <NavigationContainer style={styles.container}>
         <Tab.Navigator>
