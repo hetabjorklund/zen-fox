@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, Button } from 'react-native';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getDatabase, push, ref, onValue, remove } from 'firebase/database';
@@ -50,6 +50,7 @@ export default function App() {
 
   const [quote, setQuote] = useState("");
   const [quoteReady, setQuoteready] = useState(false);
+  let quotes = require('./quotes.json');
   //const [quotelist, setQuotelist] = useState([]);
 
   // database for quotes
@@ -63,20 +64,30 @@ export default function App() {
     );
   };
 
-  // fetch a new quote
-  const fetchQuote = async () => {
-    try
-    {
-      const response = await fetch(``); // osoite puuttuu!
-      const data = await response.json();
-      const quoteformatted = data.h;
-      setQuote(quoteformatted);
-      setQuoteready(true);
+  // fetch all quotes on first render and save to a local file
+  useEffect(() => {
+    const fetchQuote = async () => {
+      try
+      {
+        const response = await fetch(`https://zenquotes.io/api/quotes`);
+        const data = await response.json();
+        const fs = require('fs').promises;
+        await fs.writeFileSync('quotes.json', JSON.stringify(data));
+      }
+      catch {
+        console.error();
+      }
     }
-    catch {
-      console.error();
-    }
-   };
+      fetchQuote();
+  }, []);
+
+  // select a new quote from quote.json
+  const getQuote = () => { 
+    let random = Math.floor(Math.random() * quotes.length);
+    let newquote = quotes[random].h;
+    setQuote(newquote);
+    setQuoteready(true);
+  }; 
   
   return (
 
@@ -100,7 +111,7 @@ export default function App() {
         </View>
         : null}
       
-      <Button title='Get a new Zen quote' onPress={fetchQuote}></Button>
+      <Button title='Get a new Zen quote' onPress={getQuote}></Button>
 
       <NavigationContainer style={styles.container}>
         <Tab.Navigator>
