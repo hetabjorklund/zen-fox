@@ -1,7 +1,10 @@
 import styles from "../styles";
 import database from "../database";
-import { useState } from 'react'; 
+import { useState, useEffect } from 'react'; 
+import { StatusBar } from 'expo-status-bar';
 import { Text, View, Button, FlatList } from 'react-native';
+import { initializeApp } from 'firebase/app';
+import { getDatabase, push, ref, onValue, remove } from 'firebase/database';
 
 export default function Quotes() {
 
@@ -28,7 +31,7 @@ export default function Quotes() {
 
             <StatusBar style="auto" />
 
-            {quotelist.length > 0 ?
+            {/*{quotelist.length > 0 ?
                 
                 <FlatList 
                 data={quotelist}
@@ -41,7 +44,7 @@ export default function Quotes() {
                 }        
                 />
                 
-                : <Text>Go to the main page to get inspiring quotes!</Text>}
+            : <Text>Go to the main page to get inspiring quotes!</Text>}*/}
 
         </View>
     );

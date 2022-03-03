@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     input : {
-      width: 150, 
-      marginTop: 5,
+      width: 200, 
+      marginTop: 10,
       marginBottom: 5,
       borderColor: 'black', 
       borderWidth: 1
