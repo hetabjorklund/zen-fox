@@ -29,22 +29,20 @@ export default function Quotes() {
     return (
         <View style={styles.container}>
 
-            <StatusBar style="auto" />
-
-            {/*{quotelist.length > 0 ?
+            {quotelist.length > 0 ?
                 
                 <FlatList 
                 data={quotelist}
                 keyExtractor={item => item.key}
                 renderItem={({ item }) =>
                     <View style={styles.listcontainer}>
-                        <Text>{item}</Text>
+                        <Text>{item.quote} - {item.author} - </Text>
                         <Text style={styles.itemtext} onPress={() => deleteQuote(item.key)}>delete</Text>
                     </View>
                 }        
                 />
                 
-            : <Text>Go to the main page to get inspiring quotes!</Text>}*/}
+            : <Text>Go to the main page to get inspiring quotes!</Text>}
 
         </View>
     );
