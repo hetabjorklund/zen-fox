@@ -2,7 +2,7 @@ import database from '../database';
 import styles from '../styles';
 import { useState, useEffect } from 'react'; 
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Button, FlatList } from 'react-native';
+import { Text, View, Button, FlatList, Image } from 'react-native';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, push, ref, onValue, remove } from 'firebase/database';
 
@@ -29,8 +29,6 @@ export default function Pictures() {
     return (
         <View style={styles.container}>
 
-            <StatusBar style="auto" />
-
             {picturelist.length > 0 ?
                 
                 <FlatList 
@@ -38,7 +36,7 @@ export default function Pictures() {
                 keyExtractor={item => item.key}
                 renderItem={({ item }) =>
                     <View style={styles.listcontainer}>
-                        <Image style={styles.image} source={{item}}></Image>
+                        <Image style={styles.image} source={{uri:item.picture}}></Image>
                         <Text style={styles.itemtext} onPress={() => deletePicture(item.key)}>delete</Text>
                     </View>
                 }        
