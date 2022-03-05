@@ -6,12 +6,12 @@ const styles = StyleSheet.create({
   container: {
       flex: 1,    
       flexDirection: "column",
-      backgroundColor: '#fff',
+      backgroundColor: '#e68ed7',
       alignItems: 'center',
       justifyContent: 'center',
   },
   image: { 
-    width: '70%',
+    width: '90%',
     height: 150,
     borderRadius: 1
   },
@@ -19,10 +19,10 @@ const styles = StyleSheet.create({
     flex: 1,    
     flexDirection: "column",
     backgroundColor: '#e6cd8e',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '50%',
-    height: 100,
+    alignItems: 'stretch',
+    justifyContent: 'space-around',
+    width: '100%',
+    height: '50%',
   },
   innercontainer2: {
     flex: 1,    
@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#b6e39f',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '100%',
+    height: '50%',
   },
   input : {
     width: 200, 
@@ -39,14 +41,14 @@ const styles = StyleSheet.create({
     borderWidth: 1
   },
   itemtext: {
-    marginStart: 10,
+    //marginStart: 10,
     color: 'blue'
   },
   listcontainer: {
     flexDirection: 'row',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
     marginBottom: 5
   },
   operators: {

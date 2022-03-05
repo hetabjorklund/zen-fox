@@ -94,7 +94,7 @@ export default function Home() {
     
             <View style={styles.innercontainer1}>    
                 {pictureReady ?                                           
-                    <Image style={styles.image} source={{uri:picture}}></Image>     
+                    <Image resizeMode='contain' style={styles.image} source={{uri:picture}}></Image>     
                 : null}  
             </View>
 

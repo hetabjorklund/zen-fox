@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Text, View, Button, FlatList, Image } from 'react-native';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, push, ref, onValue, remove } from 'firebase/database';
+import { Icon } from 'react-native-elements';
 
 export default function Pictures() {
 
@@ -31,13 +32,14 @@ export default function Pictures() {
 
             {picturelist.length > 0 ?
                 
-                <FlatList 
+                <FlatList
+                style={{marginTop: 5}}    
                 data={picturelist}
                 keyExtractor={item => item.key}
                 renderItem={({ item }) =>
                     <View style={styles.listcontainer}>
-                        <Image style={styles.image} source={{uri:item.picture}}></Image>
-                        <Text style={styles.itemtext} onPress={() => deletePicture(item.key)}>delete</Text>
+                        <Image resizeMode='contain' style={styles.image} source={{uri:item.picture}}></Image>
+                        <Icon type="ionicon" name="trash-outline" onPress={() => deletePicture(item.key)}/>
                     </View>
                 }        
                 />
