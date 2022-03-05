@@ -88,37 +88,13 @@ export default function Home() {
         }
     };
 
-    // fetch all quotes on first render and save to a local file
-    /*useEffect(() => {
-    const fetchQuote = async () => {
-        try
-        {
-        const response = await fetch(`https://zenquotes.io/api/quotes`);
-        const data = await response.json();        
-        var path = RNFS.DocumentDirectoryPath + 'quotes.json';
-        //const fs = require('fs').promises;
-        //await fs.writeFileSync('quotes.json', JSON.stringify(data));
-        RNFS.writeFile(path, JSON.stringify(data), 'utf8')
-            .then((success) => {
-            console.log('FILE WRITTEN!');
-            });
-        }
-        catch {
-        console.error();
-        }
-    }
-        fetchQuote();
-    }, []);*/    
-
     return (
 
         <View style={styles.container}>  
     
             <View style={styles.innercontainer1}>    
-                {pictureReady ?
-                    <View>                        
-                        <Image style={styles.image} source={{uri:picture}}></Image>                        
-                    </View>                     
+                {pictureReady ?                                           
+                    <Image style={styles.image} source={{uri:picture}}></Image>     
                 : null}  
             </View>
 

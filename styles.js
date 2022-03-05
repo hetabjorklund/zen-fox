@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  button: {
+  },
   container: {
       flex: 1,    
       flexDirection: "column",
@@ -8,12 +10,19 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
   },
+  image: { 
+    width: '70%',
+    height: 150,
+    borderRadius: 1
+  },
   innercontainer1: {
     flex: 1,    
     flexDirection: "column",
     backgroundColor: '#e6cd8e',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '50%',
+    height: 100,
   },
   innercontainer2: {
     flex: 1,    
@@ -29,12 +38,6 @@ const styles = StyleSheet.create({
     borderColor: 'black', 
     borderWidth: 1
   },
-  titletext: {
-    marginTop: 10,
-    marginBottom: 5,
-    fontWeight: "bold",
-    color: 'blue'
-  },
   itemtext: {
     marginStart: 10,
     color: 'blue'
@@ -43,12 +46,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-evenly'   
-  },
-  image: { 
-    width: '50%',
-    height: 100,
-    borderRadius: 5
+    justifyContent: 'space-evenly',
+    marginBottom: 5
   },
   operators: {
     flexDirection: "row",
@@ -56,10 +55,13 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     justifyContent: 'space-evenly'
+  }, 
+  titletext: {
+    marginTop: 10,
+    marginBottom: 5,
+    fontWeight: "bold",
+    color: 'blue'
   },
-  button: {
-
-  }
 });
 
 export default styles;
