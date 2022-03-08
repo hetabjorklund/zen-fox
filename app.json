@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/zenfoxicon.png"
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/hetabjorklund/zen-fox"
   }
 }
