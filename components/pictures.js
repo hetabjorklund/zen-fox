@@ -1,10 +1,8 @@
 import database from '../database';
 import styles from '../styles';
 import { useState, useEffect } from 'react'; 
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, Button, FlatList, Image } from 'react-native';
-import { initializeApp } from 'firebase/app';
-import { getDatabase, push, ref, onValue, remove } from 'firebase/database';
+import { Text, View, FlatList, Image } from 'react-native';
+import { ref, onValue, remove } from 'firebase/database';
 import { Icon } from 'react-native-elements';
 
 export default function Pictures() {

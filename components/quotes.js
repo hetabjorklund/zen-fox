@@ -1,10 +1,8 @@
 import styles from "../styles";
 import database from "../database";
 import { useState, useEffect } from 'react'; 
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, Button, FlatList } from 'react-native';
-import { initializeApp } from 'firebase/app';
-import { getDatabase, push, ref, onValue, remove } from 'firebase/database';
+import { Text, View, FlatList } from 'react-native';
+import { ref, onValue, remove } from 'firebase/database';
 import { Icon, ListItem } from "react-native-elements";
 
 export default function Quotes() {

@@ -1,9 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
 import { Text, View, Image, Alert } from 'react-native';
 import { useEffect, useState } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { getDatabase, push, ref, onValue, remove } from 'firebase/database';
+import { push, ref } from 'firebase/database';
 import { Button } from "react-native-elements";
 import database from '../database';
 import styles from '../styles';

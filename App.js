@@ -1,15 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, Button, Image } from 'react-native';
-import { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { getDatabase, push, ref, onValue, remove } from 'firebase/database';
 import { Icon } from 'react-native-elements';
 import Quotes from './components/quotes';
 import Pictures from './components/pictures';
 import Home from './components/home';
-import database from './database';
-import styles from './styles';
 
 const Tab = createBottomTabNavigator();
 
