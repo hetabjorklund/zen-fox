@@ -6,19 +6,32 @@ const styles = StyleSheet.create({
   container: {
       flex: 1,    
       flexDirection: "column",
-      backgroundColor: '#e68ed7',
+      backgroundColor: '#7ba39b',
       alignItems: 'center',
       justifyContent: 'center',
+  },
+  emptylistcomponent: {
+    marginTop: '50%',
+    marginLeft: '20%',
+    marginRight: '20%'
+  },
+  emptylisttext: {
+    fontFamily: 'sans-serif-light',
+    fontSize: 20
   },
   image: { 
     width: '90%',
     height: 150,
-    borderRadius: 1
+  },
+  image2: { 
+    width: '90%',
+    height: '80%',
+    marginHorizontal: '5%'
   },
   innercontainer1: {
     flex: 1,    
     flexDirection: "column",
-    backgroundColor: '#e6cd8e',
+    backgroundColor: '#7ba39b',
     alignItems: 'stretch',
     justifyContent: 'space-around',
     width: '100%',
@@ -27,7 +40,7 @@ const styles = StyleSheet.create({
   innercontainer2: {
     flex: 1,    
     flexDirection: "column",
-    backgroundColor: '#b6e39f',
+    backgroundColor: '#7ba39b',
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
@@ -44,6 +57,10 @@ const styles = StyleSheet.create({
     //marginStart: 10,
     color: 'blue'
   },
+  list: {
+    backgroundColor: '#fff',
+    width: '100%'
+  },
   listcontainer: {
     flexDirection: 'row',
     backgroundColor: '#fff',
@@ -53,10 +70,9 @@ const styles = StyleSheet.create({
   },
   operators: {
     flexDirection: "row",
-    alignItems: 'stretch',
+    justifyContent: 'space-between',
     marginTop: 5,
-    marginBottom: 5,
-    justifyContent: 'space-evenly'
+    marginBottom: 10
   }, 
   titletext: {
     marginTop: 10,
