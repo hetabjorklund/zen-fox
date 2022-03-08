@@ -36,7 +36,7 @@ export default function Pictures() {
             keyExtractor={item => item.key}
                 renderItem={({ item, index }) =>  
                 <View style={styles.listcontainer}>
-                    <Image resizeMode='contain' style={styles.image} source={{uri:item.picture}}></Image>
+                    <Image resizeMode='contain' style={styles.imagelist} source={{uri:item.picture}}></Image>
                     <Icon type="ionicon" name="trash-outline" onPress={() => deletePicture(item.key)}/>
                 </View>
             }

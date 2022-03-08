@@ -8,6 +8,8 @@ import { Button } from "react-native-elements";
 import database from '../database';
 import styles from '../styles';
 
+const buttondarkpink = '#fdb6cb';
+
 export default function Home() {
 
     // PICTURES
@@ -94,7 +96,7 @@ export default function Home() {
                         <Image
                             marginTop={5}
                             resizeMode='contain'
-                            style={styles.image2}
+                            style={styles.imagehome}
                             source={{ uri: picture }} />
                         <Button                          
                             title='Save picture'
@@ -104,7 +106,7 @@ export default function Home() {
                                 marginHorizontal: '33%',
                                 marginVertical: 5 }}
                             icon={{name: 'save', color: 'white'}}   
-                            buttonStyle={{ backgroundColor: '#fdb6cb' }} />
+                            buttonStyle={{ backgroundColor: buttondarkpink }} />
                     </View>
                 : null}  
             </View>
@@ -126,7 +128,7 @@ export default function Home() {
                                 marginHorizontal: '33%',
                                 marginVertical: 5 }}
                             icon={{name: 'save', color: 'white'}}   
-                            buttonStyle={{ backgroundColor: '#fdb6cb' }}                          
+                            buttonStyle={{ backgroundColor: buttondarkpink }}                          
                         />
                     </View>
                 : null}
@@ -135,12 +137,12 @@ export default function Home() {
             <View style={styles.operators}>
                 <Button
                     buttonStyle={{
-                        backgroundColor: '#fdb6cb',
+                        backgroundColor: buttondarkpink,
                         marginHorizontal: 15 }}
                     title='Get a new fox picture'
                     onPress={fetchPicture}/>                
                 <Button
-                    buttonStyle={{ backgroundColor: '#fdb6cb' }}
+                    buttonStyle={{ backgroundColor: buttondarkpink }}
                     title='Get a new Zen quote'
                     onPress={fetchQuote} />
             </View>          
