@@ -5,7 +5,7 @@ import { Button } from "react-native-elements";
 import database from '../database';
 import styles from '../styles';
 
-const buttondarkpink = '#fdb6cb';
+const buttoncolour = '#fdb6cb';
 
 export default function Home() {
 
@@ -140,7 +140,7 @@ export default function Home() {
                                 marginHorizontal: '33%',
                                 marginVertical: 5 }}
                             icon={{name: 'save', color: 'white'}}   
-                            buttonStyle={{ backgroundColor: buttondarkpink }} />
+                            buttonStyle={{ backgroundColor: buttoncolour }} />
                     </View>
                 : null}  
             </View>
@@ -162,7 +162,7 @@ export default function Home() {
                                 marginHorizontal: '33%',
                                 marginVertical: 5 }}
                             icon={{name: 'save', color: 'white'}}   
-                            buttonStyle={{ backgroundColor: buttondarkpink }}                          
+                            buttonStyle={{ backgroundColor: buttoncolour }}                          
                         />
                     </View>
                 : null}
@@ -171,12 +171,12 @@ export default function Home() {
             <View style={styles.operators}>
                 <Button
                     buttonStyle={{
-                        backgroundColor: buttondarkpink,
+                        backgroundColor: buttoncolour,
                         marginHorizontal: 15 }}
                     title='Get a new fox picture'
                     onPress={fetchPicture}/>                
                 <Button
-                    buttonStyle={{ backgroundColor: buttondarkpink }}
+                    buttonStyle={{ backgroundColor: buttoncolour }}
                     title='Get a new Zen quote'
                     onPress={fetchQuote} />
             </View>          

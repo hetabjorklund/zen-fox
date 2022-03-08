@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native';
 
-const backgroundgreen = '#7ba396';
+const backgroundcolour = '#7ba396';
 
 const styles = StyleSheet.create({
   container: {
       flex: 1,    
       flexDirection: "column",
-      backgroundColor: backgroundgreen,
+      backgroundColor: backgroundcolour,
       alignItems: 'center',
       justifyContent: 'center',
   },
@@ -31,14 +31,14 @@ const styles = StyleSheet.create({
   innercontainer1: {
     flex: 1.3,    
     flexDirection: "column",
-    backgroundColor: backgroundgreen,
+    backgroundColor: backgroundcolour,
     alignItems: 'stretch',
     justifyContent: 'space-around'
   },
   innercontainer2: {
     flex: 1,    
     flexDirection: "column",
-    backgroundColor: backgroundgreen,
+    backgroundColor: backgroundcolour,
     alignItems: 'center',
     justifyContent: 'center'
   },
