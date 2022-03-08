@@ -52,7 +52,10 @@ export default function Home() {
     const [author, setAuthor] = useState("");
     const [quoteReady, setQuoteready] = useState(false);
 
-    // database for quotes
+    // database for all quotes
+    //ref(database, 'allquotes/');
+
+    // database for saved quotes
     ref(database, 'quotes/');
 
     // save a quote
@@ -69,6 +72,7 @@ export default function Home() {
         setQuoteready(false);
     };
 
+    // fetch a new quote
     const fetchQuote = async () => {
         try {
             const response = await fetch(`https://zenquotes.io/api/quotes`);
@@ -85,6 +89,39 @@ export default function Home() {
             console.error();
         }
     };
+
+    // fetch all quotes
+    /* the idea was to first fetch all the quotes to a database first 
+    and then pick a random one every time the button was pushed 
+    instead of a new fetch to the API every time
+    but it doesn't work: the useEffect never runs and the data never goes into the database */
+    /*useEffect(() => {
+        const fetchAllQuotes = async () => {    
+            try {
+                const response = await fetch(`https://zenquotes.io/api/quotes`);
+                const data = await response.json(); // array containing objects
+                
+                for (let i = 0; i > data.length; i++) {
+                    let author = data[i].a;
+                    let quote = data[i].q;
+                    let id = i + 1;
+                    
+                    push(
+                        ref(database, 'allquotes/'),
+                        {
+                            'id' : id,
+                            'quote': quote,
+                            'author' : author
+                        }
+                    );   
+                    console.log("push succeeded!")
+                }
+            } catch {
+              console.error();
+            }          
+        }
+        fetchAllQuotes();
+       }, []);*/
 
     return (
 
