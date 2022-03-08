@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Text, View, Button, FlatList } from 'react-native';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, push, ref, onValue, remove } from 'firebase/database';
-import { Icon } from "react-native-elements";
+import { Icon, ListItem } from "react-native-elements";
 
 export default function Quotes() {
 
@@ -28,23 +28,27 @@ export default function Quotes() {
     }, []);
 
     return (
-        <View style={styles.container}>
-
-            {quotelist.length > 0 ?
+        <View style={styles.list}>            
                 
-                <FlatList 
-                data={quotelist}
-                keyExtractor={item => item.key}
-                renderItem={({ item }) =>
-                    <View style={styles.listcontainer}>
-                        <Text>{item.quote} - {item.author} - </Text>
-                        <Icon type="ionicon" name="trash-outline" onPress={() => deleteQuote(item.key)}/>
-                    </View>
-                }        
-                />
-                
-            : <Text>Go to the main page to get inspiring quotes!</Text>}
-
+            <FlatList 
+            data={quotelist}
+            keyExtractor={item => item.key}
+            renderItem={({ item, index }) =>
+            
+                <ListItem bottomDivider key={String(index)}>
+                    <ListItem.Content>
+                        <ListItem.Title>{item.quote}</ListItem.Title>
+                        <ListItem.Subtitle>{item.author}</ListItem.Subtitle>
+                    </ListItem.Content>
+                <Icon type="ionicon" name="trash-outline" onPress={() => deleteQuote(item.key)}/>
+                </ListItem>
+            }
+            ListEmptyComponent={
+                <View style={styles.emptylistcomponent}>
+                    <Text style={styles.emptylisttext}>Go to the main page to get inspiring quotes!</Text>
+                </View>}
+            />
+               
         </View>
     );
 
