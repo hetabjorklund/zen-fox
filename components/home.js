@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Button, Image, Alert } from 'react-native';
+import { Text, View, Image, Alert } from 'react-native';
 import { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getDatabase, push, ref, onValue, remove } from 'firebase/database';
-
+import { Button } from "react-native-elements";
 import database from '../database';
 import styles from '../styles';
 
@@ -14,7 +14,6 @@ export default function Home() {
 
     const [picture, setPicture] = useState("");
     const [pictureReady, setPictureready] = useState(false);
-    //const [picturelist, setPicturelist] = useState([]);
 
     // database for pictures
     ref(database, 'pictures/');
@@ -36,9 +35,8 @@ export default function Home() {
     {
         const response = await fetch(`https://randomfox.ca/floof/`);
         const data = await response.json();
-        const image = data.image;
-        console.log(image);
-        setPicture(image);
+        //console.log(data.image);
+        setPicture(data.image);
         setPictureready(true);
     }
     catch {
@@ -51,8 +49,6 @@ export default function Home() {
     const [quote, setQuote] = useState("");
     const [author, setAuthor] = useState("");
     const [quoteReady, setQuoteready] = useState(false);
-    //let quotes = require('./quotes.json');
-    //const [quotelist, setQuotelist] = useState([]);
 
     // database for quotes
     ref(database, 'quotes/');
@@ -94,34 +90,47 @@ export default function Home() {
     
             <View style={styles.innercontainer1}>    
                 {pictureReady ?                                           
-                    <Image resizeMode='contain' style={styles.image} source={{uri:picture}}></Image>     
-                : null}  
-            </View>
-
-            <View style={styles.innercontainer1}>
-                {pictureReady ?
-                    <Button title='Save picture' onPress={savePicture}></Button>
+                    <View>
+                        <Image resizeMode='contain' style={styles.image2} source={{ uri: picture }} />
+                        <Button                          
+                            title='Save picture'
+                            onPress={savePicture}
+                            containerStyle={{
+                                width: 150,
+                                marginHorizontal: '33%',
+                                marginVertical: 5 }}
+                            icon={{name: 'save', color: 'white'}}   
+                            buttonStyle={{ backgroundColor: '#fdb6cb' }} />
+                    </View>
                 : null}  
             </View>
     
             <View style={styles.innercontainer2}>
                 {quoteReady ? 
-                    <View>
-                        <Text>{quote}</Text>
-                        <Text>{author}</Text>
+                    <View style={{
+                        marginTop: '10%',
+                        marginBottom: '5%',
+                        marginLeft: '20%',
+                        marginRight: '20%' }}>
+                        <Text style={styles.emptylisttext}>{quote}</Text>
+                        <Text style={{marginBottom: '5%'}}>{author}</Text>
+                        <Button
+                            title='Save quote'
+                            onPress={saveQuote}
+                            containerStyle={{
+                                width: 150,
+                                marginHorizontal: '33%',
+                                marginVertical: 5 }}
+                            icon={{name: 'save', color: 'white'}}   
+                            buttonStyle={{ backgroundColor: '#fdb6cb' }}                          
+                        />
                     </View>
                 : null}
-            </View>
-            
-            <View style={styles.innercontainer2}>
-                {quoteReady ?
-                    <Button title='Save quote' onPress={saveQuote}></Button>
-                : null}
-            </View>
-
+            </View>          
+         
             <View style={styles.operators}>
-                <Button style={styles.button} title='Get a new fox picture' onPress={fetchPicture}></Button>                
-                <Button style={styles.button} title='Get a new Zen quote' onPress={fetchQuote}></Button>
+                <Button buttonStyle={{ backgroundColor: '#fdb6cb' }} title='Get a new fox picture' onPress={fetchPicture}></Button>                
+                <Button buttonStyle={{ backgroundColor: '#fdb6cb' }} title='Get a new Zen quote' onPress={fetchQuote}></Button>
             </View>
           
             
