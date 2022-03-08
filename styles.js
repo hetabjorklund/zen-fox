@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native';
 
+const backgroundgreen = '#7ba396';
+
 const styles = StyleSheet.create({
-  button: {
-  },
   container: {
       flex: 1,    
       flexDirection: "column",
-      backgroundColor: '#f07067',
+      backgroundColor: backgroundgreen,
       alignItems: 'center',
       justifyContent: 'center',
   },
@@ -19,43 +19,28 @@ const styles = StyleSheet.create({
     fontFamily: 'sans-serif-light',
     fontSize: 20
   },
-  image: { 
-    width: '90%',
-    height: 150,
-  },
-  image2: { 
+    imagehome: { 
     width: '90%',
     height: '80%',
     marginHorizontal: '5%'
   },
+  imagelist: { 
+    width: '90%',
+    height: 150,
+  },
   innercontainer1: {
     flex: 1.3,    
     flexDirection: "column",
-    backgroundColor: '#f07067',
+    backgroundColor: backgroundgreen,
     alignItems: 'stretch',
-    justifyContent: 'space-around',
-    width: '100%',
-    height: '70%',
+    justifyContent: 'space-around'
   },
   innercontainer2: {
     flex: 1,    
     flexDirection: "column",
-    backgroundColor: '#7ba39b',
+    backgroundColor: backgroundgreen,
     alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    height: '30%',
-  },
-  input : {
-    width: 200, 
-    marginTop: 10,
-    marginBottom: 5,
-    borderColor: 'black', 
-    borderWidth: 1
-  },
-  itemtext: {
-    //marginStart: 10,
-    color: 'blue'
+    justifyContent: 'center'
   },
   list: {
     backgroundColor: '#fff',
@@ -73,13 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 5,
     marginBottom: 10
-  }, 
-  titletext: {
-    marginTop: 10,
-    marginBottom: 5,
-    fontWeight: "bold",
-    color: 'blue'
-  },
+  }
 });
 
 export default styles;
