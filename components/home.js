@@ -91,7 +91,11 @@ export default function Home() {
             <View style={styles.innercontainer1}>    
                 {pictureReady ?                                           
                     <View>
-                        <Image resizeMode='contain' style={styles.image2} source={{ uri: picture }} />
+                        <Image
+                            marginTop={5}
+                            resizeMode='contain'
+                            style={styles.image2}
+                            source={{ uri: picture }} />
                         <Button                          
                             title='Save picture'
                             onPress={savePicture}
@@ -129,10 +133,17 @@ export default function Home() {
             </View>          
          
             <View style={styles.operators}>
-                <Button buttonStyle={{ backgroundColor: '#fdb6cb' }} title='Get a new fox picture' onPress={fetchPicture}></Button>                
-                <Button buttonStyle={{ backgroundColor: '#fdb6cb' }} title='Get a new Zen quote' onPress={fetchQuote}></Button>
-            </View>
-          
+                <Button
+                    buttonStyle={{
+                        backgroundColor: '#fdb6cb',
+                        marginHorizontal: 15 }}
+                    title='Get a new fox picture'
+                    onPress={fetchPicture}/>                
+                <Button
+                    buttonStyle={{ backgroundColor: '#fdb6cb' }}
+                    title='Get a new Zen quote'
+                    onPress={fetchQuote} />
+            </View>          
             
         </View>
     

@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
   container: {
       flex: 1,    
       flexDirection: "column",
-      backgroundColor: '#7ba39b',
+      backgroundColor: '#f07067',
       alignItems: 'center',
       justifyContent: 'center',
   },
@@ -29,13 +29,13 @@ const styles = StyleSheet.create({
     marginHorizontal: '5%'
   },
   innercontainer1: {
-    flex: 1,    
+    flex: 1.3,    
     flexDirection: "column",
-    backgroundColor: '#7ba39b',
+    backgroundColor: '#f07067',
     alignItems: 'stretch',
     justifyContent: 'space-around',
     width: '100%',
-    height: '50%',
+    height: '70%',
   },
   innercontainer2: {
     flex: 1,    
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    height: '50%',
+    height: '30%',
   },
   input : {
     width: 200, 
