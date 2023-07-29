@@ -1,5 +1,5 @@
 # Zen Fox
-Zen Fox is a mobile app that distracts you from your worries by offering you random floofy fox pictures from [Random Fox](https://randomfox.ca/floof/) and inspiring quotes from [Zen Quotes](https://zenquotes.io/).
+Zen Fox is a mobile app that distracts you from your worries by offering you random floofy fox pictures from [Random Fox](https://randomfox.ca/floof/) and inspiring quotes from [Zen Quotes](https://zenquotes.io/). You can use the app by installing [Android Studio Emulator](https://docs.expo.dev/workflow/android-studio-emulator/).
 
 ## Home
 From the Home view you can choose whether you want a new random fox picture or a new random Zen quote. If you are happy with the picture or quote, you can save it to a list, or if not, push the button again to get a new one. If saving the quote or picture succeeded, you get a confirmation with an [Alert](https://reactnative.dev/docs/alert).
